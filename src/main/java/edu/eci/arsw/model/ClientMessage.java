@@ -5,6 +5,8 @@
  */
 package edu.eci.arsw.model;
 
+import edu.eci.arsw.equipo.CuerpoTecnico;
+
 /**
  *
  * @author laboratorio
@@ -12,6 +14,7 @@ package edu.eci.arsw.model;
 
 public class ClientMessage {
     private String message;
+    private CuerpoTecnico miembroCT;
     
     public String getMessage() {
         return message;
@@ -20,4 +23,10 @@ public class ClientMessage {
     public void setMessage(String message) {
         this.message = message;
     }
+    
+    public CuerpoTecnico getMiembroCT(){
+        return miembroCT;
+    }
+    
+    
 }

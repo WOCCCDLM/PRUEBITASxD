@@ -4,21 +4,27 @@
     <title>Hello WebSocket</title>
     <script src="sockjs-0.3.4.js"></script>
     <script src="stomp.js"></script>
-    <script src="stomp-ws.js"></script>
+    <script src="pagPrincipal.js"></script>
 </head>
 <body>
+  <BODY BACKGROUND="http://thumbs.dreamstime.com/z/plantilla-del-diseño-del-fútbol-del-fútbol-41272915.jpg" ALT="cancha.jpg">
   <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
                 Javascript and reload this page!</h2></noscript>
   <div>
-    <div>
-      <button id="connect">Connect</button>
-      <button id="disconnect" disabled="disabled">Disconnect</button>
-    </div>
-    <div id="conversationDiv">
-      <label>Message to send?</label><input type="text" id="message" />
-      <button id="send">Send</button>
-      <p id="response"></p>
-    </div>
+	<center>
+		<h1 style="color:white"><b>Plantilla colaborativa de futbol</b></h1>
+		<img class="right" src="http://www.thegifcollector.com.ar/TgC_images_2015/futbol/TgC_mundial01i_intro.gif" />
+		<a href="miEquipo.html"> <p><strong><button id="primerEnt">Entrenador Principal</button></strong></p>
+
+		<a href="miEquipo.html"> <p><strong><button id="segundoEnt">Segundo Entrenador</button></strong></p>
+
+		<a href="miEquipo.html"> <p><strong><button id="primerPrepFis">Primer Preparador Fisico</button></strong></p>
+
+		<a href="miEquipo.html"> <p><strong><button id="segundoPrepFis">Segundo Preparador Fisico</button></strong></p>
+
+		<a href="miEquipo.html"> <p><strong><button id="psicologo">Psicologo</button></strong></p>
+	</center>
+      
   </div>
 </body>
 </html>

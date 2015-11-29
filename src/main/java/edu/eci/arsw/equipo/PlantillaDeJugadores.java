@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.eci.arsw.plantilla;
+package edu.eci.arsw.equipo;
 
 import java.util.ArrayList;
 
@@ -26,5 +26,17 @@ public class PlantillaDeJugadores {
     
     public String getNombreEquipo() {
         return nombreEquipo;
+    }
+    
+    public void agregarJugador(Jugador j){
+        jugadores.add(j);
+    }
+    
+    public void eliminarJugador(Jugador j){
+        for(Jugador aux:jugadores){
+            if(aux.getNoCamisa() == j.getNoCamisa()){
+                jugadores.remove(j);
+            }
+        }
     }
 }

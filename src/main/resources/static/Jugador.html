@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <script src="sockjs-0.3.4.js"></script>
+    <script src="stomp.js"></script>
+    <script src="stomp-ws.js"></script>
+</head>
+<body>
+  <BODY BACKGROUND="http://thumbs.dreamstime.com/z/plantilla-del-diseño-del-fútbol-del-fútbol-41272915.jpg">
+  <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
+                Javascript and reload this page!</h2></noscript>
+  <div>
+    <div>
+      <button id="connect">Connect</button>
+      <button id="disconnect" disabled="disabled">Disconnect</button>
+    </div>
+      
+      <div>
+    <div>
+    <center>
+      <h1 style="color:white">Jugador</h1>
+      <img src="http://www.cdlacharca.es/torneo%20oliver%20puras%20xii/gif_futbol.gif"><br>
+      
+    </center>
+    </div>
+  </div>
+      
+    <div id="conversationDiv">
+      <label>comentarios al jugador</label><input type="text" id="message" />
+      
+      <button id="send">Guardar</button>
+      <p id="response"></p>
+    </div>
+  </div>
+</body>
+</html>
