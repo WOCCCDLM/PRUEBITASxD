@@ -7,7 +7,7 @@
     <script src="stomp-ws.js"></script>
 </head>
 <body>
-  <BODY BACKGROUND="http://thumbs.dreamstime.com/z/plantilla-del-diseño-del-fútbol-del-fútbol-41272915.jpg">
+<BODY BACKGROUND="http://thumbs.dreamstime.com/z/plantilla-del-diseño-del-fútbol-del-fútbol-41272915.jpg">
   <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
                 Javascript and reload this page!</h2></noscript>
   <div>
@@ -27,7 +27,8 @@
   </div>
       
     <div id="conversationDiv">
-      <label>Comentarios al jugador</label><input type="text" id="message" />
+      
+      <textarea type="text" id="message" oninput="sendMessage()" rows="20" cols="60"></textarea>
       
       <button id="send">Guardar</button> 
       <p id="response"></p>

@@ -36,7 +36,8 @@ public class MessageController {
     @MessageMapping("/message")
     @SendTo("/topic/messages")
     public ServerMessage serverMessage(ClientMessage message) throws Exception {
-            System.out.println("sadkksdjdjsdajdsjdsjdsjdsaj");
+            msj = message;
+            System.out.println("sadkksdjdjsdajdsjdsjdsjdsaj "+ msj.getJugador());
            
            // Thread.sleep(1000); // simulated delay
             ServerMessage msj = new ServerMessage( message.getMessage()+ message.getJugador());

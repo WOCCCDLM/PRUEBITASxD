@@ -1,4 +1,5 @@
 var stompClient = null;
+var selectedPlayer ;
 
 function setConnected(connected) {
     document.getElementById('connect').disabled = connected;
@@ -9,6 +10,16 @@ function setConnected(connected) {
 
 function connect() {
     var socket = new SockJS('/ws');
+     var jugador = document.getElementsByName("selectPlayer");
+  
+    alert(jugador.length);
+    for (var i = 0; i<jugador.length;i++){
+        if(jugador[i].checked){
+        alert( jugador[i].value+ " Gonorrea");
+        selectedPlayer = jugador[i].value;
+        }
+    }
+    //alert(jugador.value + "sfsd");
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function(frame) {
     setConnected(true);
@@ -27,16 +38,18 @@ function disconnect() {
     console.log("Disconnected");
 }
 
-function enviarJugador(boton){
-    var jugador = boton.value.toString();
+/*function enviarJugador(boton){
+     alert(jugador);
+    jugador = boton.value;
+    
     alert("Ha escogido a: "+jugador);
     stompClient.send("/app/message", {}, JSON.stringify({ 'jugador': jugador }));
-}
+}*/
 
-function sendMessage(boton) {
+function sendMessage() {
     
     var message = document.getElementById('message').value;
-    alert(message);
+    alert(selectedPlayer);
     stompClient.send("/app/message", {}, JSON.stringify({ 'message': message }));
      
 }
@@ -50,12 +63,12 @@ function showServerMessage(message) {
 }
 
 function init() {
-   var btnSend = document.getElementById('send');
-    btnSend.onclick=sendMessage;
    var btnConnect = document.getElementById('connect');
    btnConnect.onclick=connect;
    var btnDisconnect = document.getElementById('disconnect');
    btnDisconnect.onclick=disconnect;
+  
+   
    disconnect();
 }
 
