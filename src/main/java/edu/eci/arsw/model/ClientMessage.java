@@ -12,7 +12,7 @@ import edu.eci.arsw.equipo.CuerpoTecnico;
  * @author laboratorio
  */
 
-public class ClientMessage {
+public class ClientMessage { 
     private String message;
      private CuerpoTecnico autor;
   

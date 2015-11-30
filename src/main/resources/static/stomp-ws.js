@@ -36,8 +36,9 @@ function enviarJugador(boton){
 function sendMessage(boton) {
     
     var message = document.getElementById('message').value;
+    alert(mesage.toString());
     stompClient.send("/app/message", {}, JSON.stringify({ 'message': message }));
-
+     
 }
 
 function showServerMessage(message) {
@@ -50,7 +51,7 @@ function showServerMessage(message) {
 
 function init() {
    var btnSend = document.getElementById('send');
-   btnSend.onclick=sendMessage;
+    btnSend.onclick=sendMessage;
    var btnConnect = document.getElementById('connect');
    btnConnect.onclick=connect;
    var btnDisconnect = document.getElementById('disconnect');
