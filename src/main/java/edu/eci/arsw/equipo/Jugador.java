@@ -21,6 +21,11 @@ public class Jugador {
     private String posicion;
     private ArrayList<ClientMessage> msjRecibidos;
     
+    public Jugador(int noCamisa, String nombre){
+        this.noCamisa = noCamisa;
+        this.nombre = nombre;
+    }
+    
     public Jugador(int noCamisa, String nombre, int edad, float peso, float estatura, String posicion){
         this.noCamisa = noCamisa;
         this.nombre = nombre;

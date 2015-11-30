@@ -30,13 +30,16 @@ public class MessageController {
     private static final int VERDE = 13;
     private static final int CAFE = 14;
     private CuerpoTecnico miembroCT;
+
+    private ClientMessage msj = new ClientMessage("S", new Jugador(10," malparido"));
     
-@MessageMapping("/message")
+    @MessageMapping("/message")
     @SendTo("/topic/messages")
     public ServerMessage serverMessage(ClientMessage message) throws Exception {
             System.out.println("sadkksdjdjsdajdsjdsjdsjdsaj");
            
-            Thread.sleep(1000); // simulated delay
-            return new ServerMessage("nooo seeee: " + message.getMessage());
+           // Thread.sleep(1000); // simulated delay
+            ServerMessage msj = new ServerMessage( message.getMessage()+ message.getJugador());
+            return msj;
     }
 }

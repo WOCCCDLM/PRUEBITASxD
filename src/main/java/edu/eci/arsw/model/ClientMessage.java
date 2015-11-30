@@ -6,6 +6,7 @@
 package edu.eci.arsw.model;
 
 import edu.eci.arsw.equipo.CuerpoTecnico;
+import edu.eci.arsw.equipo.Jugador;
 
 /**
  *
@@ -14,9 +15,16 @@ import edu.eci.arsw.equipo.CuerpoTecnico;
 
 public class ClientMessage { 
     private String message;
-     private CuerpoTecnico autor;
+
+    private CuerpoTecnico autor;
+    private Jugador jug;
   
+    public ClientMessage(){}
     
+    public ClientMessage(String message, Jugador autorP){
+        this.message = message;
+        this.jug =autorP;
+    }
     public String getMessage() {
         return message;
     }
@@ -28,5 +36,8 @@ public class ClientMessage {
     public CuerpoTecnico getAutor(){
         return autor;
     } 
-    
+    public Jugador getJugador(){
+    return jug;
+    }
 }
+

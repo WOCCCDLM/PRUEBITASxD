@@ -36,7 +36,7 @@ function enviarJugador(boton){
 function sendMessage(boton) {
     
     var message = document.getElementById('message').value;
-    alert(mesage.toString());
+    alert(message);
     stompClient.send("/app/message", {}, JSON.stringify({ 'message': message }));
      
 }
