@@ -14,7 +14,8 @@ import edu.eci.arsw.equipo.CuerpoTecnico;
 
 public class ClientMessage {
     private String message;
-    private CuerpoTecnico miembroCT;
+     private CuerpoTecnico autor;
+  
     
     public String getMessage() {
         return message;
@@ -24,9 +25,8 @@ public class ClientMessage {
         this.message = message;
     }
     
-    public CuerpoTecnico getMiembroCT(){
-        return miembroCT;
-    }
-    
+    public CuerpoTecnico getAutor(){
+        return autor;
+    } 
     
 }

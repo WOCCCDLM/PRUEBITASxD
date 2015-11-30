@@ -5,6 +5,9 @@
  */
 package edu.eci.arsw.equipo;
 
+import edu.eci.arsw.model.ClientMessage;
+import java.util.ArrayList;
+
 /**
  *
  * @author FAMILIA
@@ -16,6 +19,7 @@ public class Jugador {
     private float peso;
     private float estatura;
     private String posicion;
+    private ArrayList<ClientMessage> msjRecibidos;
     
     public Jugador(int noCamisa, String nombre, int edad, float peso, float estatura, String posicion){
         this.noCamisa = noCamisa;
@@ -24,6 +28,7 @@ public class Jugador {
         this.peso = peso;
         this.estatura = estatura;
         this.posicion = posicion;
+        msjRecibidos = new ArrayList<>();
     }
     
     public String getNombre() {
@@ -54,4 +59,7 @@ public class Jugador {
         return noCamisa;
     }
     
+    public void agregarMensaje(ClientMessage m){
+        msjRecibidos.add(m);
+    }
 }

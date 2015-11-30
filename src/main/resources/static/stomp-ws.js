@@ -27,9 +27,17 @@ function disconnect() {
     console.log("Disconnected");
 }
 
-function sendMessage() {
+function enviarJugador(boton){
+    var jugador = boton.value.toString();
+    alert("Ha escogido a: "+jugador);
+    stompClient.send("/app/message", {}, JSON.stringify({ 'jugador': jugador }));
+}
+
+function sendMessage(boton) {
+    
     var message = document.getElementById('message').value;
     stompClient.send("/app/message", {}, JSON.stringify({ 'message': message }));
+
 }
 
 function showServerMessage(message) {

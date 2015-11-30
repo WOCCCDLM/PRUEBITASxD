@@ -5,12 +5,15 @@
  */
 package edu.eci.arsw.model;
 
+import edu.eci.arsw.equipo.CuerpoTecnico;
+
 /**
  *
  * @author laboratorio
  */
 public class ServerMessage {
     private String content;
+   
     
     public ServerMessage(String content) {
         this.content = content;
@@ -19,4 +22,6 @@ public class ServerMessage {
     public String getContent() {
         return content;
     }
+    
+    
 }
