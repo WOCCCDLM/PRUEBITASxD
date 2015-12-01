@@ -9,30 +9,30 @@ function setConnected(connected) {
 }
 
 function connect() {
-    var socket = new SockJS('/ws');
+     var socket = new SockJS('/ws');
      var jugador = document.getElementsByName("selectPlayer");
   
-    alert(jugador.length);
-    for (var i = 0; i<jugador.length;i++){
-        if(jugador[i].checked){
-        alert( jugador[i].value+ " Gonorrea");
-        selectedPlayer = jugador[i].value;
+        alert(jugador.length);
+        for (var i = 0; i<jugador.length;i++){
+            if(jugador[i].checked){
+                alert( jugador[i].value+ " Gonorrea");
+                selectedPlayer = jugador[i].value;
+            }
         }
-    }
-    //alert(jugador.value + "sfsd");
-    stompClient = Stomp.over(socket);
-    stompClient.connect({}, function(frame) {
-    setConnected(true);
-    console.log('Connected: ' + frame);
-    stompClient.subscribe('/topic/messages', function(serverMessage){
-        showServerMessage(JSON.parse(serverMessage.body).content);
-    });
+        //alert(jugador.value + "sfsd");
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, function(frame) {
+            setConnected(true);
+            console.log('Connected: ' + frame);
+            stompClient.subscribe('/topic/messages', function(serverMessage){
+            showServerMessage(JSON.parse(serverMessage.body).content);
+        });
     });
 }
 
 function disconnect() {
     if (stompClient != null) {
-    stompClient.disconnect();
+        stompClient.disconnect();
     }
     setConnected(false);
     console.log("Disconnected");
