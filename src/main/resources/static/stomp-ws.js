@@ -15,7 +15,7 @@ function connect() {
         alert(jugador.length);
         for (var i = 0; i<jugador.length;i++){
             if(jugador[i].checked){
-                alert( jugador[i].value+ " Gonorrea");
+                alert( jugador[i].value);
                 selectedPlayer = jugador[i].value;
             }
         }

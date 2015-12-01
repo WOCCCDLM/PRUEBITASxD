@@ -8,22 +8,22 @@ var pagPrincipal = null;
 function seleccion(boton) {
     var mensaje = boton.value.toString();
         if(mensaje == "primerEntrenador"){
-            alert("Bienvenido: " + mensaje);
+            alert("Bienvenido Primer entrenador !!");
         }
         
         if(mensaje == "segundoEntrenador"){
-            alert("Bienvenido: " + mensaje);
+            alert("Bienvenido Segundo entrenador !!");
         }
         
         if(mensaje == "primerPreparadorFisico"){
-            alert("Bienvenido: " + mensaje);
+            alert("Bienvenido Primer preparador fisico !!");
         }
         if(mensaje == "segundoPreparadorFisico"){
-            alert("Bienvenido: " + mensaje);
+            alert("Bienvenido Segundo preparador fisico !!");
         }
         
          if(mensaje == "psicologo"){
-            alert("Bienvenido: " + mensaje);
+            alert("Bienvenido Psicologo !! ");
         }
     
 }
