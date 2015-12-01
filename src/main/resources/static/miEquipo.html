@@ -10,75 +10,38 @@
   <BODY BACKGROUND="cancha.jpg">
   <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable
                 Javascript and reload this page!</h2></noscript>
-  <div>
-    <div>
+
+    
     <center>
       <h1 style="color:white">Plantilla de futbol</h1>
-         
-       <form>
-            <input type="radio" name="selectPlayer" value="Jugador 1" checked> Pl1
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 2"> Pl2
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 3"> Pl3
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 4"> Pl4
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 5"> Pl5
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 6"> Pl6
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 7"> Pl7
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 8"> Pl8
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 9"> Pl9
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 10"> Pl10
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 11"> Pl11
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 12"> Pl12
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 13"> Pl13
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 14"> Pl14
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 15"> Pl15
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 16"> Pl16
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 17"> Pl17
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 18"> Pl18
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 19"> Pl19
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 20"> Pl20
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 21"> Pl21
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 22"> Pl22
-            <br>
-            <input type="radio" name="selectPlayer" value="Jugador 23"> Pl23
-            <br>
-        </form>    
-          <div>
-    <div>
-      <button id="connect">Connect</button>
-      <button id="disconnect" disabled="disabled">Disconnect</button>
-    </div>
-       <div id="conversationDiv">
-      <textarea type="text" id="message" oninput="sendMessage()" rows="20" cols="60"></textarea>
+      <div id="opciones">
+            <select id="jugadores" name="provincia">
+            <option value="" selected="selected">- Selecciona jugador-</option>
+            <option name="selectPlayer" value="1">Jugador 1</option>
+            <option name="selectPlayer" value="2">Jugador 2</option>
+            <option name="selectPlayer" value="3">Jugador 3</option>
+            <option name="selectPlayer" value="4">Jugador 4</option>
+            <option name="selectPlayer" value="5">Jugador 5</option>
+            <option name="selectPlayer" value="6">Jugador 6</option>
+            <option name="selectPlayer" value="7">Jugador 7</option> 
+            <br/>
+            
+            <input>
+
+            <br/> 
+            <button id="connect">Connect</button>
+            <br/>
+            <button id="disconnect" disabled="disabled">Disconnect</button>
+            <br/>
+
       
-      <button id="send">Guardar</button> 
-      <p id="response"></p>
-    </div>
-          
-     <img src="http://oi40.tinypic.com/vx2kj8.jpg">
-     </left>
-    </div>
+                <div id="conversationDiv">
+                  <textarea type="text" id="message" oninput="" rows="10" cols="60"></textarea>
+      
+                 <button id="save" onclick="sendMessage()">Guardar</button> 
+                 <p id="response"></p>
+       </div>           
+            <img src="http://oi40.tinypic.com/vx2kj8.jpg">
     </center>
-  </div>
 </body>
 </html>

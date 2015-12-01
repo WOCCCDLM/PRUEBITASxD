@@ -5,6 +5,7 @@
  */
 var pagPrincipal = null;
 
+
 function seleccion(boton) {
     var mensaje = boton.value.toString();
         if(mensaje == "primerEntrenador"){
