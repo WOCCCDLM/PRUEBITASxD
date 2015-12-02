@@ -30,8 +30,6 @@ public class MessageController {
     private static final int VERDE = 13;
     private static final int CAFE = 14;
     private CuerpoTecnico miembroCT;
-
-    private ClientMessage msj = new ClientMessage("S", new Jugador(10," malparido"));
     
     @MessageMapping("/message")
     @SendTo("/topic/messages")
