@@ -12,6 +12,7 @@ import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import edu.eci.arsw.model.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -30,13 +31,21 @@ public class MessageController {
     private static final int VERDE = 13;
     private static final int CAFE = 14;
     private CuerpoTecnico miembroCT;
-
-    private ClientMessage msj = new ClientMessage("S", new Jugador(10," malparido"));
+    private List<Jugador> jugadores;
     
     @MessageMapping("/message")
     @SendTo("/topic/messages")
     public ServerMessage serverMessage(ClientMessage message) throws Exception {
-              
+            jugadores=new ArrayList<>();
+            Jugador j1 = new Jugador(1, "James");
+            jugadores.add(j1);
+            char noJugador = message.getMessage().charAt(0);
+            for (Jugador aux:jugadores){
+                if(aux.getNoCamisa() == noJugador){
+                    aux.agregarMensaje(message);
+                    System.out.print("Se agrego el mensaje "+message.getMessage()+" Al jugador "+aux.getNombre());
+                }
+            }
            // Thread.sleep(1000); // simulated delay
             ServerMessage msj = new ServerMessage(message.getMessage());
             return msj;
