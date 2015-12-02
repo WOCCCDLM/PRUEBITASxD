@@ -13,7 +13,7 @@ function connect() {
     
      var socket = new SockJS('/ws');
        
-      jugador = document.getElementById("jugadores")
+      jugador = document.getElementById("jugadores");
          if (jugador.selectedIndex == null || jugador.selectedIndex == 0) { 
             alert("No escogio a nungun jugador.");
             return false;
@@ -21,7 +21,6 @@ function connect() {
          else { 
             alert("El formulario ha sido enviado"+" "+jugador.selectedIndex);
             }		
-         alert(jugador.selectedIndex);
         
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function(frame) {
@@ -53,7 +52,7 @@ function showServerMessage(message) {
     var response = document.getElementById('response');
     var p = document.createElement('p');
     p.style.wordWrap = 'break-word';
-    p.appendChild(document.createTextNode(localStorage.username+"  "+message));
+    p.appendChild(document.createTextNode("asdsadasdsadsad"+jugador.selectedIndex+localStorage.username+"  "+message));
     response.appendChild(p);
 }
 

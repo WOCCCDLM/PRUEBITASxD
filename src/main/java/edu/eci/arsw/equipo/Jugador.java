@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author FAMILIA
  */
 public class Jugador {
-    private int noCamisa;
+    private char noCamisa;
     private String nombre;
     private int edad;
     private float peso;
@@ -21,12 +21,12 @@ public class Jugador {
     private String posicion;
     private ArrayList<ClientMessage> msjRecibidos;
     
-    public Jugador(int noCamisa, String nombre){
+    public Jugador(char noCamisa, String nombre){
         this.noCamisa = noCamisa;
         this.nombre = nombre;
     }
     
-    public Jugador(int noCamisa, String nombre, int edad, float peso, float estatura, String posicion){
+    public Jugador(char noCamisa, String nombre, int edad, float peso, float estatura, String posicion){
         this.noCamisa = noCamisa;
         this.nombre = nombre;
         this.edad = edad;
@@ -60,7 +60,7 @@ public class Jugador {
         posicion = nuevaPosicion;
     }
     
-    public int getNoCamisa(){
+    public char getNoCamisa(){
         return noCamisa;
     }
     
