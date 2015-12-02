@@ -21,7 +21,6 @@ function connect() {
          else { 
             alert("El formulario ha sido enviado"+" "+jugador.selectedIndex);
             }		
-         alert(jugador.selectedIndex);
         
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function(frame) {
