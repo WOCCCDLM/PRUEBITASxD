@@ -1,5 +1,6 @@
 var stompClient = null;
-var selectedPlayer ;
+var jugador;
+var miembroCt;
 
 function setConnected(connected) {
     document.getElementById('connect').disabled = connected;
@@ -9,17 +10,19 @@ function setConnected(connected) {
 }
 
 function connect() {
+    
      var socket = new SockJS('/ws');
-     var jugador = document.getElementsByName("selectPlayer");
-  
-        alert(jugador.length);
-        for (var i = 0; i<jugador.length;i++){
-            if(jugador[i].checked){
-                alert( jugador[i].value);
-                selectedPlayer = jugador[i].value;
+       
+      jugador = document.getElementById("jugadores")
+         if (jugador.selectedIndex == null || jugador.selectedIndex == 0) { 
+            alert("No escogio a nungun jugador.");
+            return false;
             }
-        }
-        //alert(jugador.value + "sfsd");
+         else { 
+            alert("El formulario ha sido enviado"+" "+jugador.selectedIndex);
+            }		
+         alert(jugador.selectedIndex);
+        
         stompClient = Stomp.over(socket);
         stompClient.connect({}, function(frame) {
             setConnected(true);
@@ -38,18 +41,10 @@ function disconnect() {
     console.log("Disconnected");
 }
 
-/*function enviarJugador(boton){
-     alert(jugador);
-    jugador = boton.value;
-    
-    alert("Ha escogido a: "+jugador);
-    stompClient.send("/app/message", {}, JSON.stringify({ 'jugador': jugador }));
-}*/
-
 function sendMessage() {
     
     var message = document.getElementById('message').value;
-    alert(selectedPlayer);
+   
     stompClient.send("/app/message", {}, JSON.stringify({ 'message': message }));
      
 }
@@ -58,7 +53,7 @@ function showServerMessage(message) {
     var response = document.getElementById('response');
     var p = document.createElement('p');
     p.style.wordWrap = 'break-word';
-    p.appendChild(document.createTextNode(message));
+    p.appendChild(document.createTextNode(miembroCt+" "+message));
     response.appendChild(p);
 }
 
@@ -71,5 +66,30 @@ function init() {
    
    disconnect();
 }
+
+
+function seleccion(boton) {
+       miembroCt = boton.value.toString();
+        if(miembroCt == "primerEntrenador"){
+            alert("Bienvenido Primer entrenador !!");
+        }
+        
+        if(miembroCt == "segundoEntrenador"){
+            alert("Bienvenido Segundo entrenador !!");
+        }
+        
+        if(miembroCt == "primerPreparadorFisico"){
+            alert("Bienvenido Primer preparador fisico !!");
+        }
+        if(miembroCt == "segundoPreparadorFisico"){
+            alert("Bienvenido Segundo preparador fisico !!");
+        }
+        
+         if(miembroCt == "psicologo"){
+            alert("Bienvenido Psicologo !! ");
+        }
+    
+}
+
 
 window.onload = init;

@@ -15,17 +15,26 @@
     <center>
       <h1 style="color:white">Plantilla de futbol</h1>
       <div id="opciones">
-            <select id="jugadores" name="provincia">
+           
+       
+        <form action="#" name="formulario" onsubmit="connect()">
+          <select id="jugadores" name="provincia">    
             <option value="" selected="selected">- Selecciona jugador-</option>
-            <option name="selectPlayer" value="1">Jugador 1</option>
+            
+            <option name="selectPlayer" value="pedro">Jugador 1</option>
             <option name="selectPlayer" value="2">Jugador 2</option>
             <option name="selectPlayer" value="3">Jugador 3</option>
             <option name="selectPlayer" value="4">Jugador 4</option>
             <option name="selectPlayer" value="5">Jugador 5</option>
             <option name="selectPlayer" value="6">Jugador 6</option>
             <option name="selectPlayer" value="7">Jugador 7</option> 
-            <br/>
+             </select>
             
+            <p><strong><button id="p" value="primerEntrenador" onclick="seleccion(this)">Entrenador Principal</button></strong></p>
+            <p><strong><button id="p" value="segundoEntrenador" onclick="seleccion(this)">Segundo Entrenador</button></strong></p>
+        </form>        
+            
+          
             <input>
 
             <br/> 
