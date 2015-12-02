@@ -52,7 +52,7 @@ function showServerMessage(message) {
     var response = document.getElementById('response');
     var p = document.createElement('p');
     p.style.wordWrap = 'break-word';
-    p.appendChild(document.createTextNode("asdsadasdsadsad"+jugador.selectedIndex+localStorage.username+"  "+message));
+    p.appendChild(document.createTextNode(" "+jugador.selectedIndex+localStorage.username+"  "+message));
     response.appendChild(p);
 }
 
