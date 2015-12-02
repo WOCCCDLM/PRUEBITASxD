@@ -53,7 +53,7 @@ function showServerMessage(message) {
     var response = document.getElementById('response');
     var p = document.createElement('p');
     p.style.wordWrap = 'break-word';
-    p.appendChild(document.createTextNode(miembroCt+" "+message));
+    p.appendChild(document.createTextNode(localStorage.username+"  "+message));
     response.appendChild(p);
 }
 
@@ -69,7 +69,8 @@ function init() {
 
 
 function seleccion(boton) {
-       miembroCt = boton.value.toString();
+        miembroCt = boton.value.toString();
+       	localStorage.setItem("username",miembroCt);
         if(miembroCt == "primerEntrenador"){
             alert("Bienvenido Primer entrenador !!");
         }
